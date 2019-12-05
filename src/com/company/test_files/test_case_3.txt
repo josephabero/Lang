@@ -1,0 +1,13 @@
+class myClass
+{
+    public main(string [] args)
+    {
+        a = 8;
+        b = 9;
+        screen(a);
+        screen(b);
+
+        b = 27;
+        screen(b);
+    }
+}
