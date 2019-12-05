@@ -1,0 +1,153 @@
+CMPE 152 Project 4
+
+By: Joseph Abero, Jon Andrew Hernandez, Yong Huang, and Colin Schardt
+
+
+Features
+---------
+- Class & Main function Syntax
+- Variable Declaration
+- Integer Assignment
+- Print Statement
+
+- Code Generation capabilities by running program
+- Program compatibility with Jasmin and JVM
+
+
+Utilizes
+---------
+- IntelliJ Idea
+- ANTLR
+- Jasmin
+- JVM
+
+
+Dependencies
+------------
+Jasmin: http://sourceforge.net/project/showfiles.php?group_id=100746
+ANTLR: https://www.antlr.org/download/antlr-4.7.2-complete.jar
+
+
+Folder/File Structure
+----------------
+- build                         : contains Lang.j (Jasmin Assembly Code file)
+- src                           : contains all source code (including test cases)
+    - antlr                         : contains auto-generated ANTLR code from grammar file
+    - com/company                   : contains source & test code
+        - test_files                    : test case code
+        - Lang.g4                       : grammar file
+        - LangCustomListener            : User defined Listener (holds Code Generation code)
+        - Main.java                     : Main to run code
+- test_case_results             : pre-built .class files. shows RESULTS of test_cases
+- Lang.class                    : LATEST built .class file
+- antlr-4.7.2-complete.jar      : dependency
+- jasmin.jar                    : dependency, used to utilize .j file and create .class file
+- Lang.iml                      : project file
+
+
+
+RUN PREBUILT .class FILES
+-------------------------
+* View steps in pictures in Lang/test_case_results *
+
+- Open command prompt
+
+> cd <path_to_project>/Lang/test_case_results/"Case 1"/
+> java -classpath ..\Lang Lang
+
+* This will display the output to Test Case 1 (found in src/com/company/test_files/test_case_1.txt) *
+
+
+
+
+TO BUILD AND RUN
+-----------------
+
+1. Add EACH of these dependencies in IntelliJ:
+- Go to File -> Project Structure -> Libraries -> + -> Java
+- Select the .jar file to add as library.
+- Repeat for each .jar file.
+
+
+2. Create .j file for Code Generation to write to.
+
+While in <path_to_project>/Lang/ : 
+
+> mkdir build
+> cd build
+> touch Lang.j
+
+* This .j file must be created PRIOR for our code to write to the .j file *
+
+
+3. Build Project
+
+4. Run Main
+- In IntelliJ, open src/com/company/Main.java
+- Run the main()
+
+- If there's no option to Run,
+    Go to Run -> Edit Configurations
+    Add a Application Configuration
+    The "Main class" should be "com.company.Main"
+    Click "Ok" and Rebuild Project
+
+* Step 4 will write to build/Lang.j *
+
+
+
+5. check build/Lang.j for J assembly code
+
+It should look something like (it will likely be missing indents):
+
+------------------------------------------------------
+.class public Lang
+.super java/lang/Object
+
+.method public <init>()V
+        aload_0
+        invokespecial java/lang/Object/<init>()V
+        return
+.end method
+
+.method public static main([Ljava.lang.String;)V
+        .limit stack 10
+        .limit locals 10
+
+        getstatic  java/lang/System/out Ljava/io/PrintStream;
+
+        ldc "Hello World"
+
+        invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+        return
+.end method
+------------------------------------------------------
+
+
+
+6. Open Terminal
+
+> cd <path to project>/Lang
+
+
+
+7. Use jasmin.jar and myClass.j file to create Lang.class file
+
+> java -jar jasmin.jar build/Lang.j
+
+
+
+8. Run .class file
+
+> java -classpath ..\Lang Lang
+
+
+* this will run the program *
+* for this example, the console output would be: *
+
+  Hello World
+
+
+* the .class file outputs the actual output of the program *
+ 
+
