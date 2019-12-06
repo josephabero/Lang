@@ -6,7 +6,7 @@ class myClass
         b = 25;
         screen(a);
         screen(b);
-        screen(140);
+        screen(120);
 
         a++;
         screen(a);

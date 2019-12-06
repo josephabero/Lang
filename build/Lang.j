@@ -25,10 +25,10 @@ bipush 25
 invokestatic java/lang/String/valueOf(I)Ljava/lang/String;
 invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
 
-; Assembly Code to Print: INT 140
+; Assembly Code to Print: INT 120
 
 getstatic java/lang/System/out Ljava/io/PrintStream;
-bipush 140
+bipush 120
 invokestatic java/lang/String/valueOf(I)Ljava/lang/String;
 invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
 
