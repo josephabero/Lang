@@ -6,8 +6,9 @@ mainClassName : ID ;
 args : ID ;
 
 program : statement+ ;
-statement : let | print ;
+statement : let | print | increment;
 
+increment: ID '++' ';';
 let : ID '=' INT ';';
 print : 'screen' '(' (INT | ID) ')' ';';
 

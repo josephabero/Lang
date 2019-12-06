@@ -17,7 +17,7 @@ public class Main {
 
 
         // Edit this string to change to the file you want to test
-        String fileName = "test_case_1.txt";
+        String fileName = "test_case_4.txt";
 
         try {
 

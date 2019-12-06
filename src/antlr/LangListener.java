@@ -70,6 +70,16 @@ public interface LangListener extends ParseTreeListener {
 	 */
 	void exitStatement(LangParser.StatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LangParser#increment}.
+	 * @param ctx the parse tree
+	 */
+	void enterIncrement(LangParser.IncrementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LangParser#increment}.
+	 * @param ctx the parse tree
+	 */
+	void exitIncrement(LangParser.IncrementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LangParser#let}.
 	 * @param ctx the parse tree
 	 */

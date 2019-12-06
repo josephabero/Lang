@@ -18,5 +18,12 @@ bipush 8
 invokestatic java/lang/String/valueOf(I)Ljava/lang/String;
 invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
 
+; Assembly Code to Print: ID a
+
+getstatic java/lang/System/out Ljava/io/PrintStream;
+bipush 9
+invokestatic java/lang/String/valueOf(I)Ljava/lang/String;
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+
 return
 .end method

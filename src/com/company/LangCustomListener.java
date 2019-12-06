@@ -115,4 +115,10 @@ public class LangCustomListener extends LangBaseListener {
         this.variableMap.put(ctx.ID().getText(),
                 Integer.parseInt(ctx.INT().getText()));
     }
+
+    @Override
+    public void exitIncrement(LangParser.IncrementContext ctx) {
+        Integer value = this.variableMap.get(ctx.ID().getText());
+        this.variableMap.put(ctx.ID().getText(), value + 1);
+    }
 }
