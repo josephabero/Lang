@@ -9,6 +9,7 @@ Features
 - Variable Declaration
 - Integer Assignment
 - Print Statement
+- Increment
 
 - Code Generation capabilities by running program
 - Program compatibility with Jasmin and JVM

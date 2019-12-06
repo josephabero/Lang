@@ -18,6 +18,20 @@ bipush 8
 invokestatic java/lang/String/valueOf(I)Ljava/lang/String;
 invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
 
+; Assembly Code to Print: ID b
+
+getstatic java/lang/System/out Ljava/io/PrintStream;
+bipush 25
+invokestatic java/lang/String/valueOf(I)Ljava/lang/String;
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+
+; Assembly Code to Print: INT 140
+
+getstatic java/lang/System/out Ljava/io/PrintStream;
+bipush 140
+invokestatic java/lang/String/valueOf(I)Ljava/lang/String;
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+
 ; Assembly Code to Print: ID a
 
 getstatic java/lang/System/out Ljava/io/PrintStream;
